@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCare - Gestión de Mascotas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <!-- Logo -->
+        <div class="sidebar-logo">
+            <h1>PetCare</h1>
+        </div>
+
+        <!-- Navegación -->
+        <nav class="sidebar-nav">
+            <ul>
+                <li>
+                    <a href="#" data-tab="inicio">Inicio</a>
+                </li>
+                <li>
+                    <a href="#" data-tab="acceso">Acceso</a>
+                </li>
+                <li>
+                    <a href="#" data-tab="servicios">Servicios</a>
+                </li>
+                <li>
+                    <a href="#" data-tab="mascotas">Mascotas</a>
+                </li>
+                <li>
+                    <a href="#" data-tab="reporte">Reporte</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Footer del Sidebar -->
+        <footer class="sidebar-footer">
+            <div class="user-badge">
+                <span class="user-avatar">U</span>
+                <span class="user-name">Usuario</span>
+            </div>
+            <button class="btn-logout">Salir</button>
+        </footer>
+    </aside>
+
+    <!-- Contenido Principal -->
+    <main class="main-content">
+        <!-- Sección Inicio -->
+        <section id="inicio" class="section active">
+            <div class="welcome-banner">
+                <h2>Bienvenido a PetCare</h2>
+                <p>Gestiona el cuidado de tus mascotas de forma fácil y eficiente</p>
+            </div>
+
+            <form class="greeting-form">
+                <h3>Formulario de Saludo</h3>
+                <div class="form-group">
+                    <label for="nombre-usuario">Nombre:</label>
+                    <input type="text" id="nombre-usuario" name="nombre" placeholder="Ingresa tu nombre" required>
+                </div>
+                <button type="submit" class="btn-primary">Saludar</button>
+            </form>
+        </section>
+
+        <!-- Sección Acceso -->
+        <section id="acceso" class="section">
+            <h2>Acceso al Sistema</h2>
+
+            <!-- Formulario de Registro -->
+            <div class="form-container">
+                <h3>Registro</h3>
+                <form class="registro-form">
+                    <div class="form-group">
+                        <label for="reg-nombre">Nombre Completo:</label>
+                        <input type="text" id="reg-nombre" name="nombre" placeholder="Tu nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">Correo Electrónico:</label>
+                        <input type="email" id="reg-email" name="email" placeholder="tu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password">Contraseña:</label>
+                        <input type="password" id="reg-password" name="password" placeholder="Crea una contraseña" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Registrarse</button>
+                </form>
+            </div>
+
+            <!-- Formulario de Login -->
+            <div class="form-container">
+                <h3>Iniciar Sesión</h3>
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Correo Electrónico:</label>
+                        <input type="email" id="login-email" name="email" placeholder="tu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Contraseña:</label>
+                        <input type="password" id="login-password" name="password" placeholder="Tu contraseña" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Ingresar</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Sección Servicios -->
+        <section id="servicios" class="section">
+            <h2>Servicios</h2>
+
+            <!-- Formulario para agregar servicio -->
+            <div class="form-container">
+                <h3>Agregar Nuevo Servicio</h3>
+                <form class="agregar-servicio-form">
+                    <div class="form-group">
+                        <label for="servicio-nombre">Nombre del Servicio:</label>
+                        <input type="text" id="servicio-nombre" name="nombre" placeholder="Ej: Baño, Corte de uñas" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="servicio-precio">Precio:</label>
+                        <input type="number" id="servicio-precio" name="precio" placeholder="0.00" step="0.01" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Agregar Servicio</button>
+                </form>
+            </div>
+
+            <!-- Lista de servicios -->
+            <div class="servicios-lista">
+                <h3>Lista de Servicios Disponibles</h3>
+                <ul id="servicios-list">
+                    <!-- Los servicios se agregarán dinámicamente aquí -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección Mascotas -->
+        <section id="mascotas" class="section">
+            <h2>Mascotas</h2>
+
+            <!-- Formulario para registrar mascota -->
+            <div class="form-container">
+                <h3>Registrar Nueva Mascota</h3>
+                <form class="registrar-mascota-form">
+                    <div class="form-group">
+                        <label for="mascota-correo">Correo del Propietario:</label>
+                        <input type="email" id="mascota-correo" name="correo" placeholder="tu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mascota-nombre">Nombre de la Mascota:</label>
+                        <input type="text" id="mascota-nombre" name="nombre" placeholder="Nombre de la mascota" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mascota-servicio">Servicio:</label>
+                        <select id="mascota-servicio" name="servicio" required>
+                            <option value="">Selecciona un servicio</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mascota-fecha">Fecha de Registro:</label>
+                        <input type="date" id="mascota-fecha" name="fecha" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Registrar Mascota</button>
+                </form>
+            </div>
+
+            <!-- Buscador de mascotas -->
+            <div class="buscador-container">
+                <h3>Buscar Mascota</h3>
+                <input type="text" id="buscador-mascota" placeholder="Busca por nombre o correo del propietario">
+                <ul id="mascotas-list">
+                    <!-- Los resultados de búsqueda se mostrarán aquí -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección Reporte -->
+        <section id="reporte" class="section">
+            <h2>Reporte</h2>
+
+            <!-- Buscador por correo -->
+            <div class="buscador-container">
+                <h3>Buscar por Correo</h3>
+                <input type="email" id="buscador-correo" placeholder="Ingresa el correo del propietario">
+                <button class="btn-primary" id="btn-buscar-reporte">Buscar</button>
+            </div>
+
+            <!-- Área de resultados -->
+            <div class="resultados-container">
+                <h3>Resultados</h3>
+                <div id="reporte-resultados">
+                    <!-- Los resultados del reporte se mostrarán aquí -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
